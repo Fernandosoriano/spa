@@ -14,7 +14,11 @@ export class NavbarComponent implements OnInit {
 
   buscarHeroe (termino:string){
     // console.log(termino)
-    this.router.navigate(['/heroeFiltrado',termino]);
+    if(termino ==  '' ){
+      alert('debes ingresar al menos un carácter para iniciar tu búsqueda.')
+    }
+    else{
+    this.router.navigate(['/heroeFiltrado',termino]);}
   }
 
 }
