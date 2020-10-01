@@ -8,6 +8,7 @@ import { AboutComponent } from './components/about/about.component';
 import { HeroesComponent } from './components/heroes/heroes.component';
 import {HeroesService} from './servicios/heroes.service';
 import { HeroeComponent } from './components/heroe/heroe.component';
+import { HeroeFiltradoComponent } from './components/heroe-filtrado/heroe-filtrado.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -15,7 +16,8 @@ import { HeroeComponent } from './components/heroe/heroe.component';
     HomeComponent,
     AboutComponent,
     HeroesComponent,
-    HeroeComponent],
+    HeroeComponent,
+    HeroeFiltradoComponent],
   imports: [
     BrowserModule,
     APP_ROUTING

@@ -62,6 +62,20 @@ export class HeroesService{
     getHeroe (idx:string){
       return this.heroes[idx];
   }
+  buscarHeroes (termino:string){
+    let heroesarr: Heroe[] = [];
+    termino = termino.toLowerCase();
+    // for (let heroe of this.heroes){ ciclo for of de  ES5
+      for(let i = 0; i<this.heroes.length; i++) { //ciclo for tradicional 
+        let heroe = this.heroes[i]; //variable igual a un objeto que va cambiando su valor de acuerdo a cómo se recorre el array de objetos  por el ciclo for
+      let nombre = heroe.nombre.toLowerCase();
+      if(nombre.indexOf(termino)>=0){
+        heroe.idx = i;//  asignamos el valor de la entrada i-ésima del array a una propiedad nueva idx, esto para que cada heroe tenga su id único , y funcione correctamente el ver más al momento de hacer la búsqueda
+        heroesarr.push(heroe)
+      }
+    }
+    return heroesarr;
+}
 }
 export interface Heroe {
 nombre:string;
@@ -69,4 +83,5 @@ bio:string;
 img:string;
 aparicion:string;
 casa:string;
+idx?: number;
 };

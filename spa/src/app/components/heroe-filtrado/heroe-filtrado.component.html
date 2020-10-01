@@ -1,0 +1,30 @@
+<h1>Buscando a: <small>{{ termino }}</small></h1>
+<hr>
+<div class="row animated fadeIn fast" *ngIf="heroeFiltrado.length == 0">
+    <div class="col-md-12">
+        <div class="aler alert-info" role="alert">
+            no se encontraron resultados para: {{termino}}
+        </div>
+    </div>
+</div>
+
+<div class="card-columns animated fadeIn">
+
+    <div class="card" *ngFor="let heroe of heroeFiltrado">
+        <img class="card-img-top img-fluid" src="{{heroe.img}}" alt="{{heroe.nombre}}">
+        <div class="card-body">
+            <h4 class="card-title">{{heroe.nombre}}</h4>
+            <p class="card-text">{{ heroe.bio }}</p>
+            <p class="card-text"><small class="text-muted">{{heroe.aparicion}}</small></p>
+
+            <button (click)="verHeroe(heroe.idx)" type="button" class="btn btn-outline-primary btn-block"> 
+                Ver más...
+            </button>
+
+            <!-- <a [routerLink]="['/heroe',i]" class="btn btn-outline-primary
+             "> ver más link...</a> -->
+
+        </div>
+    </div>
+
+</div>
